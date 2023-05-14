@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<company>
+    <stuff project="NAMSI">Sayan Dasgupta</stuff>
+    <college>
+        MAKAUT
+        <name>STCET</name>
+        <course>Electrical Engineering</course>
+    </college>
+</company>

@@ -12,7 +12,14 @@ public class Student implements IEntitiesMaster{
 		this.studentAddress = studentAddress;
 	}
 	
+	public void beanInitHook() {
+		System.out.println(this.getClass().getName()+" class bean is created");
+	}
 	
+	public void beanDestroyHook() {
+		System.gc();
+		System.out.println(this.getClass().getName()+" class bean is destroyed");
+	}
 	
 	public Student() {}
 
@@ -47,7 +54,5 @@ public class Student implements IEntitiesMaster{
 					+ ", studentAddress=" + getStudentAddress()
 				+"]";
 	}
-	
-	
 	
 }

@@ -9,23 +9,7 @@
 		 http://www.springframework.org/schema/context
 		 https://www.springframework.org/schema/context/spring-context.xsd"
 >
-		 
- <bean name="Student" class="com.sayan.mult.entities.Student" ></bean>
- 
- <bean name="StudentFilled" class="com.sayan.mult.entities.Student" 
-	 	init-method="beanInitHook" 
-	 	destroy-method="beanDestroyHook" 
-	 	lazy-init="true"
-	 	scope="prototype">
-	 	
- 	<property name="studentAddress" value="Kolkata" />
- 	<property name="studentName">
- 		<value>Sayan Dasgupta</value>
- 	</property>
- 	<property name="studentId" value="1" />
- 	
- </bean>
- 
- 
+	<import resource="master-xml-config.xml"/>
+	<import resource="master-xml-config2.xml"/>
  
  </beans>
