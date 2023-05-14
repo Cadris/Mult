@@ -1,9 +1,12 @@
 package com.sayan.mult;
 
-import java.lang.reflect.InaccessibleObjectException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.sayan.mult.entities.Address;
+import com.sayan.mult.entities.Student;
 
 /**
  * Hello world!
@@ -19,12 +22,14 @@ public class Application
     	log.debug("Hello World");
         System.out.println( "Hello World!" ); //NOSONAR
         
-        try {
-        	throw new InaccessibleObjectException("This is the exception message");
-        } catch (Exception e) {
-			log.error("An Error Occured: ", e);
-		}
+        ApplicationContext context = new ClassPathXmlApplicationContext("master-xml-config.xml");
+        ApplicationContext context2 = new ClassPathXmlApplicationContext("master-xml-config2.xml");
         
-        System.out.println("Data OUT"); //NOSONAR
+        Student stud1 = context.getBean("Student", Student.class);
+        Address add1 = context2.getBean("Address", Address.class);
+        
+        System.out.println(stud1);
+        System.out.println(add1);        
+        
     }
 }
